@@ -58,8 +58,14 @@ export const materials = [
 // Add real photos to src/assets/photos/ and list them here, e.g.
 // { src: new URL('./assets/photos/day1.jpg', import.meta.url).href, alt: 'Opening program' }
 // Until then, the gallery shows colored placeholders.
-export const photos = Array.from({ length: 10 }, (_, i) => ({
+/*export const photos = Array.from({ length: 10 }, (_, i) => ({
   src: null,
   alt: `Event photo ${i + 1}`,
   hue: 205 + ((i * 17) % 50),
-}));
+})) */
+export const photos = [
+  { src: new URL('./assets/photos/day1-opening.jpg', import.meta.url).href, alt: 'Opening program, Day 1' },
+  { src: new URL('./assets/photos/day2-encoding-01.jpg', import.meta.url).href, alt: 'Participants encoding in the system' },
+  { src: new URL('./assets/photos/day3-simulation.jpg', import.meta.url).href, alt: 'Workflow simulation' },
+];
+;
