@@ -7,8 +7,11 @@ const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 /* ---------- Event details from data.js ---------- */
-$('#event-location').textContent = event.location;
-$('#event-attendees').textContent = event.attendees;
+// Any element with data-event="<field>" shows that field from src/data.js.
+document.querySelectorAll('[data-event]').forEach((el) => {
+  const value = event[el.dataset.event];
+  if (value) el.textContent = value;
+});
 $('#register-cta').setAttribute('href', event.registerUrl);
 $('#drive-link').setAttribute('href', event.driveUrl);
 

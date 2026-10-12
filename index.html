@@ -74,11 +74,11 @@
             <span class="rounded bg-navy-800 px-2 py-0.5 text-lg font-extrabold text-white">DSWD</span>
             <span class="text-xs font-semibold leading-tight text-navy-800">4Ps · Pantawid Pamilyang<br />Pilipino Program</span>
           </div>
-          <h1 id="home-title" class="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-navy-800 sm:text-4xl">
+          <h1 id="home-title" data-event="title" class="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-navy-800 sm:text-4xl">
             Grievance Redress System Workflow Automation (NewGRS) User System Review
           </h1>
-          <p class="mt-4 text-lg font-medium text-slate-700">Region III</p>
-          <p class="text-lg font-semibold text-slate-800">3–6 November 2026</p>
+          <p data-event="region" class="mt-4 text-lg font-medium text-slate-700">Region III</p>
+          <p data-event="dateRange" class="text-lg font-semibold text-slate-800">3–6 November 2026</p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-[2fr_1fr]">
@@ -87,20 +87,20 @@
             <p class="mt-3 text-sm leading-relaxed text-slate-600">
               Welcome to the DSWD Pantawid Pamilyang Pilipino Program Grievance Redress System Workflow Automation
               (NewGRS) User System Review. This training reviews the system's workflows, encoding and reporting
-              features with Region III users through hands-on simulations, 3–6 November 2026.
+              features with <span data-event="region">Region III</span> users through hands-on simulations, <span data-event="dateRange">3–6 November 2026</span>.
             </p>
             <dl class="mt-6 grid grid-cols-1 gap-4 border-t border-slate-200 pt-5 text-sm sm:grid-cols-3">
               <div>
                 <dt class="font-bold text-navy-800">Dates</dt>
-                <dd class="text-slate-600">3–6 November 2026</dd>
+                <dd data-event="dateRange" class="text-slate-600">3–6 November 2026</dd>
               </div>
               <div>
                 <dt class="font-bold text-navy-800">Location</dt>
-                <dd id="event-location" class="text-slate-600">DSWD Region III</dd>
+                <dd data-event="location" class="text-slate-600">DSWD Region III</dd>
               </div>
               <div>
                 <dt class="font-bold text-navy-800">Attendees</dt>
-                <dd id="event-attendees" class="text-slate-600">251</dd>
+                <dd data-event="attendees" class="text-slate-600">251</dd>
               </div>
             </dl>
           </div>
@@ -186,7 +186,7 @@
         <h2 id="register-title" class="section-label">Register</h2>
         <div class="panel mx-auto max-w-xl">
           <h3 class="text-xl font-extrabold text-navy-800">NewGRS User System Review Registration</h3>
-          <p class="mb-5 mt-1 text-sm text-slate-500">Region III · 3–6 November 2026</p>
+          <p class="mb-5 mt-1 text-sm text-slate-500"><span data-event="region">Region III</span> · <span data-event="dateRange">3–6 November 2026</span></p>
 
           <form id="register-form" class="space-y-4" novalidate>
             <div>
@@ -219,7 +219,7 @@
     </main>
 
     <footer class="border-t border-white/10 py-8 text-center text-xs text-white/60">
-      DSWD · Pantawid Pamilyang Pilipino Program · Region III · NewGRS User System Review 2026
+      DSWD · Pantawid Pamilyang Pilipino Program · <span data-event="region">Region III</span> · NewGRS User System Review 2026
     </footer>
     <!-- Sign-in dialog (email → 6-digit code) -->
     <dialog id="auth-dialog" aria-labelledby="auth-title" class="w-[92vw] max-w-sm rounded-xl p-0 shadow-card backdrop:bg-black/60">
