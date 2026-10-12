@@ -58,6 +58,9 @@
             <li><a class="nav-link" href="#materials">Materials</a></li>
             <li><a class="nav-link" href="#photos">Photos</a></li>
             <li><a class="nav-link" href="#register">Register</a></li>
+            <li id="auth-item" class="hidden">
+              <button id="auth-btn" type="button" class="nav-link rounded border border-white/40 px-3 py-1.5 hover:bg-white/10">Sign in</button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -139,6 +142,18 @@
               </a>
             </div>
           </div>
+          <p id="auth-user" class="mb-4 hidden text-sm text-slate-500" aria-live="polite"></p>
+
+          <div id="materials-locked" class="hidden rounded-lg border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center">
+            <svg viewBox="0 0 24 24" class="mx-auto h-10 w-10 text-navy-700" fill="none" stroke="currentColor" stroke-width="1.800" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="9" rx="2" />
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke-linecap="round" />
+            </svg>
+            <p class="mt-3 font-semibold text-slate-800">Materials are for registered participants</p>
+            <p id="materials-locked-msg" class="mt-1 text-sm text-slate-500">Sign in with your registered email to view and download them.</p>
+            <button id="materials-signin" type="button" class="btn-primary mt-5">Sign in</button>
+          </div>
+
           <ul id="materials-grid" class="grid grid-cols-2 gap-4 lg:grid-cols-4"></ul>
         </div>
       </section>
@@ -206,5 +221,38 @@
     <footer class="border-t border-white/10 py-8 text-center text-xs text-white/60">
       DSWD · Pantawid Pamilyang Pilipino Program · Region III · NewGRS User System Review 2026
     </footer>
+    <!-- Sign-in dialog (email → 6-digit code) -->
+    <dialog id="auth-dialog" aria-labelledby="auth-title" class="w-[92vw] max-w-sm rounded-xl p-0 shadow-card backdrop:bg-black/60">
+      <div class="p-6">
+        <div class="mb-4 flex items-start justify-between gap-4">
+          <h2 id="auth-title" class="text-xl font-extrabold text-navy-800">Sign in</h2>
+          <button id="auth-close" type="button" class="rounded p-1 text-slate-500 hover:bg-slate-100" aria-label="Close">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg>
+          </button>
+        </div>
+
+        <form id="auth-email-form" class="space-y-3" novalidate>
+          <p class="text-sm text-slate-600">Enter the email you registered with. We will send you a 6-digit code.</p>
+          <div>
+            <label for="auth-email" class="mb-1 block text-sm font-medium">Email</label>
+            <input id="auth-email" type="email" class="field" autocomplete="email" required />
+          </div>
+          <button type="submit" class="btn-primary w-full">Send code</button>
+        </form>
+
+        <form id="auth-code-form" class="hidden space-y-3" novalidate>
+          <p id="auth-code-hint" class="text-sm text-slate-600"></p>
+          <div>
+            <label for="auth-code" class="mb-1 block text-sm font-medium">6-digit code</label>
+            <input id="auth-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" class="field text-center text-lg tracking-[0.4em]" autocomplete="one-time-code" required />
+          </div>
+          <button type="submit" class="btn-primary w-full">Verify and sign in</button>
+          <button id="auth-back" type="button" class="w-full text-sm font-medium text-brand hover:underline">Use a different email / resend code</button>
+        </form>
+
+        <p id="auth-msg" class="mt-3 min-h-[1.25rem] text-sm" role="status" aria-live="polite"></p>
+        <p class="mt-2 text-xs text-slate-500">Not registered yet? Close this and use the Register form.</p>
+      </div>
+    </dialog>
   </body>
 </html>
