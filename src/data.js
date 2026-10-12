@@ -11,6 +11,7 @@ export const event = {
   registerUrl: '#register',
   // Replace with the shared Google Drive folder link:
   driveUrl: 'https://drive.google.com/',
+  apiUrl: 'https://script.google.com/macros/s/AKfycbyVChXFzFliqBxmck0KrXAeoA1UoOWTfPlfkq6sYZSxRHLqSuzkc3FmgeiweufAAklU/exec',
 };
 
 export const agenda = [
