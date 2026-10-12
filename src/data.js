@@ -64,8 +64,8 @@ export const materials = [
   hue: 205 + ((i * 17) % 50),
 })) */
 export const photos = [
-  { src: new URL('.src/assets/photos/day1-opening.jpg', import.meta.url).href, alt: 'Opening program, Day 1' },
-  { src: new URL('.src/assets/photos/day2-encoding-01.jpg', import.meta.url).href, alt: 'Participants encoding in the system' },
-  { src: new URL('.src/assets/photos/day3-simulation.jpg', import.meta.url).href, alt: 'Workflow simulation' },
+  { src: new URL('.assets/photos/day1-opening.jpg', import.meta.url).href, alt: 'Opening program, Day 1' },
+  { src: new URL('.assets/photos/day2-encoding-01.jpg', import.meta.url).href, alt: 'Participants encoding in the system' },
+  { src: new URL('.assets/photos/day3-simulation.jpg', import.meta.url).href, alt: 'Workflow simulation' },
 ];
 ;
